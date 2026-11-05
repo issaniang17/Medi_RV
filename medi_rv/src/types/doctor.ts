@@ -3,4 +3,5 @@ export type Doctor = {
     speciality:string;
     phone:string;
     address:string;
+    order_number:number;
 }
