@@ -74,13 +74,13 @@ export const step:stepProps[] = [
     {
         icon:Calendar,
         step:'2',
-        title:'Recherchez un médecin',
+        title:'Choisissez un créneau',
         text:"Consultez les disponibilités en temps réel et sélectionnez le créneau qui vous convient, 24h/24 et 7j/7."
     },
     {
         icon:CircleCheckBig,
         step:'3',
-        title:'Recherchez un médecin',
+        title:'Confirmez votre rendez-vous',
         text:"Recevez une confirmation instantanée par Email. Un rappel automatique vous est envoyé la veille de votre consultation."
     }
 ]
