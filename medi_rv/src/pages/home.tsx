@@ -1,15 +1,15 @@
 import { ArrowRight, Calendar } from "lucide-react";
 import LinkBtn from "../components/linkBtn";
-import Navbar from "../components/navbar";
 import PulseAvailable from "../components/pulseAvailable";
 import SearchDoctor from "../components/searchDoctor";
 import Specialities from "../components/specialities";
 import CommentMarche from "../components/comment_marche";
+import MedecinPreview from "../components/medecinPreview";
+import Join from "../components/join";
 
 const Home = () => {
   return (
     <div className="flex flex-col bg-linear-to-b md:bg-linear-to-r from-[#0B6370] to-[#0D343C] text-white ">
-      <Navbar />
       <div className="mt-20 px-8 py-10 flex flex-col gap-8 space-y-4">
         <PulseAvailable />
         <div className="text-4xl font-bold space-y-3 md:w-1/2">
@@ -24,6 +24,8 @@ const Home = () => {
       </div>
       <Specialities/>
       <CommentMarche/>
+      <MedecinPreview/>
+      <Join/>
     </div>
   );
 };
