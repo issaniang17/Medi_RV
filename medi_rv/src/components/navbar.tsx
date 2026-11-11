@@ -31,12 +31,13 @@ const Navbar = () => {
           item.nom === "Inscription" ? (
             <NavLink
               to={item.url}
+              key={index}
               className={`p-2 inline-flex items-center justify-center rounded-lg ${changeBgColor ? "bg-[#0B6B78] text-white" : "bg-white text-[#0B6B78]"}`}
             >
               {item.nom}
             </NavLink>
           ) : item.url.includes("#") ? (
-            <a href={item.url}>{item.nom}</a>
+            <a href={item.url} key={index}>{item.nom}</a>
           ) : (
             <NavLink
               to={item.url}

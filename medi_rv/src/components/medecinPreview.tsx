@@ -28,15 +28,17 @@ const MedecinPreview = () => {
         </div>
       </div>
       <div className="grid md:grid-cols-3 gap-5">
-        {previewDoctorsExample.map((item, index) => (
+        {previewDoctorsExample.map((item) => (
           <DoctorCard
+          key={item.id}
+            link
             adresse={item.adresse}
             disponibilite={item.disponibilite}
             nom={item.nom}
             prenom={item.prenom}
             prix={item.prix}
             specialite={item.specialite}
-            key={index}
+            id={item.id}
           />
         ))}
       </div>
