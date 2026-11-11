@@ -32,15 +32,15 @@ export const navbar: navbarItems[] = [
   },
   {
     nom: "Médecins",
-    url: "#medecins",
+    url: "/#medecins",
   },
   {
     nom: "Comment ça marche",
-    url: "#comment-marche",
+    url: "/#comment-marche",
   },
   {
     nom: "Contact",
-    url: "#contact",
+    url: "/#contact",
   },
   {
     nom: "Connexion",
@@ -48,7 +48,7 @@ export const navbar: navbarItems[] = [
   },
   {
     nom: "Inscription",
-    url: "/auth/signup",
+    url: "/auth/register",
   },
 ];
 
@@ -114,6 +114,7 @@ export const step: stepProps[] = [
 
 export const previewDoctorsExample: doctorProps[] = [
   {
+    id:1,
     nom: "Mbaye",
     prenom: "Aissatou",
     adresse: "Clinique Pasteur, Dakar",
@@ -122,6 +123,7 @@ export const previewDoctorsExample: doctorProps[] = [
     prix: "20 000",
   },
   {
+    id:2,
     nom: "Diop",
     prenom: "Ibrahima",
     adresse: "CHU de Dakar, Plateau",
@@ -130,6 +132,7 @@ export const previewDoctorsExample: doctorProps[] = [
     prix: "15 000",
   },
   {
+    id:3,
     nom: "Ndiaye",
     prenom: "Fatou",
     adresse: "Polyclinique Madeleine",
@@ -222,3 +225,17 @@ export const supportMediRV:{icon:LucideIcon, info:string}[]=[
     },
 ]
 
+export const authNavbar:navbarItems[]=[
+    {
+        nom:'Connexion',
+        url:'/auth/login'
+    },
+    {
+        nom:'Incription',
+        url:'/auth/register'
+    },
+    {
+        nom:'Mot de passe oublié',
+        url:'/auth/change-password/'
+    },
+]

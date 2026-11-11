@@ -17,7 +17,7 @@ const Join = () => {
         </div>
         <div className="flex flex-col gap-4 md:flex-row items-center justify-center">
             <LinkBtn icon={<Calendar/>} name="Prendre rendez-vous gratuitement" url="/appointments" key={'rendez-vous'} style="bg-[#E07B39]"/>
-            <LinkBtn icon={<ArrowRight/>} name="Prendre rendez-vous gratuitement" url="/appointments" key={'rendez-vous'} style="bg-[#255B63] flex-row-reverse"/>
+            <LinkBtn icon={<ArrowRight/>} name="Vous êtes médecin? Rejoignez-nous " url="/doctor-applications" key={'devenir-medecin'} style="bg-[#255B63] flex-row-reverse"/>
         </div>
         <div className="my-4 border-t  grid grid-cols-2 md:grid-cols-4 gap-4 py-5">
             {supportClient.map((item, index)=>(

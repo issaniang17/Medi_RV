@@ -18,8 +18,8 @@ const Footer = () => {
           le Sénégal.
         </p>
         <div className="flex items-center gap-4">
-          {socialMedia.map((item) => (
-            <SocialMediaCard icon={item.icon} url={item.url} />
+          {socialMedia.map((item, index) => (
+            <SocialMediaCard icon={item.icon} url={item.url} key={index}/>
           ))}
         </div>
       </div>
@@ -71,7 +71,7 @@ const Footer = () => {
           <div className="flex flex-col gap-3 text-sm">
             {footerLink.aide.map((item, index) =>
               item.url.includes("#") ? (
-                <a href={item.url}>{item.nom}</a>
+                <a href={item.url} key={index}>{item.nom}</a>
               ) : (
                 <Link
                   to={item.url}
