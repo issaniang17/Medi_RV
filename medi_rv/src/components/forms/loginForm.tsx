@@ -1,6 +1,6 @@
 import { ArrowRight, Eye, EyeClosed, Lock, Mail } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 type loginProps = {
@@ -9,6 +9,7 @@ type loginProps = {
   remember: boolean;
 };
 const LoginForm = () => {
+    const navigate = useNavigate()
   const [viewPassword, setViewPassword] = useState(false);
   const [login, setLogin] = useState<loginProps>({
     email: "",
@@ -30,7 +31,18 @@ const LoginForm = () => {
     if(!login.email || !login.password){
         return toast.error('Veillez remplir tous les champs svp')
     }
-    console.log(login)
+    const loginPatient =  localStorage.getItem('Register')
+    if(!loginPatient){
+        return toast.error('no user')
+    }
+    const userInfo = JSON.parse(loginPatient)
+    if(login.email !== userInfo.email || login.password !== userInfo.password){
+        return toast.error('Email ou mot de passe incorrect')
+    }
+    
+    console.log(loginPatient)
+    
+    navigate('/auth/me/')
   };
   return (
     <form

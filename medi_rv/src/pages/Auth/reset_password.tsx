@@ -44,14 +44,14 @@ const ResetPassword = () => {
         </button>
       </form>
       <div className="flex gap-2 items-center px-6 p-3 rounded-2xl bg-[#E0F2F4]">
-        <Shield className="text-[#0B6B78]" size={15} />
+        <Shield className="text-[#0B6B78] shrink-0" size={15} />
         <p className="text-gray-500 text-sm">
           Le lien de réinitialisation sera valide pendant{" "}
           <span className="font-bold text-black">30 minutes</span>. Vérifiez
           également votre dossier spam.
         </p>
       </div>
-      <div className="flex justify-center items-center gap-2 text-gray-500">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-2 text-gray-500">
         <p>Vous vous souvenez de votre mot de passe ?</p>
         <Link to={"/auth/login"} className="text-[#0B6B78] font-bold">
           Se connecter

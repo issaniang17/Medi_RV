@@ -8,7 +8,7 @@ import {
   User,
 } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 type registerProps = {
@@ -21,6 +21,7 @@ type registerProps = {
   acceptConditon: boolean;
 };
 const RegisterForm = () => {
+    const navigate = useNavigate()
   const [viewPassword, setViewPassword] = useState(false);
   const [register, setRegister] = useState<registerProps>({
     email: "",
@@ -60,8 +61,9 @@ const RegisterForm = () => {
     } else if (register.password !== register.confirmPassword) {
       return toast.error("Les deux mots de passe ne correspond pas");
     }
-
     console.log(register);
+    localStorage.setItem('Register', JSON.stringify(register))
+    navigate('/auth/login')
   };
   return (
     <form
@@ -123,7 +125,7 @@ const RegisterForm = () => {
           name="phone"
           id="phone"
           placeholder="771234567"
-          pattern="7[0756][0-9]{3}[0-9]{2}[0-9]{2}"
+          pattern="7[07568][0-9]{3}[0-9]{2}[0-9]{2}"
           value={register.phone.trim().split(' ').join('')}
           onChange={handleChange}
           required

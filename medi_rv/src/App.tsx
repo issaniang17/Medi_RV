@@ -9,6 +9,8 @@ import AuthDashboard from "./dashboard/authDashboard";
 import Login from "./pages/Auth/login";
 import Register from "./pages/Auth/register";
 import ResetPassword from "./pages/Auth/reset_password";
+import DoctorRegister from "./pages/doctor/doctorRegister";
+import PatienProfile from "./pages/patient/patienProfile";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -29,6 +31,8 @@ const App = () => {
           <Route path="register" element={<Register />} />
           <Route path="change-password" element={<ResetPassword/>}/>
         </Route>
+        <Route path="/doctor-applications/" element={<DoctorRegister/>}/>
+        <Route path="/auth/me/" element={<PatienProfile/>}/>
       </Routes>
       <Toaster richColors position="top-center" />
     </>
