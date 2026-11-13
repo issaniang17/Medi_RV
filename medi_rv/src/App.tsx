@@ -6,9 +6,9 @@ import AllDoctors from "./pages/all_doctors";
 import DoctorDetail from "./pages/doctorDetail";
 import { useEffect } from "react";
 import AuthDashboard from "./dashboard/authDashboard";
-import Login from "./pages/login";
-import Register from "./pages/register";
-import ResetPassword from "./pages/reset_password";
+import Login from "./pages/Auth/login";
+import Register from "./pages/Auth/register";
+import ResetPassword from "./pages/Auth/reset_password";
 
 const App = () => {
   const { pathname } = useLocation();
