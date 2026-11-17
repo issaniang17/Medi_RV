@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Toaster } from "sonner";
 import Home from "./pages/home";
 import HomeDashboard from "./dashboard/HomeDashboard";
@@ -10,7 +10,11 @@ import Login from "./pages/Auth/login";
 import Register from "./pages/Auth/register";
 import ResetPassword from "./pages/Auth/reset_password";
 import DoctorRegister from "./pages/doctor/doctorRegister";
-import PatienProfile from "./pages/patient/patienProfile";
+import PatientDashboard from "./dashboard/patientDashboard";
+import Acceuil from "./pages/patient/acceuil";
+import RendezVous from "./pages/patient/rendez_vous";
+import Profil from "./pages/patient/profil";
+import PatientSearchDoctors from "./pages/patient/search_doctors";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -21,7 +25,7 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route  element={<HomeDashboard />}>
+        <Route element={<HomeDashboard />}>
           <Route path="/" element={<Home />} />
           <Route path="/doctors" element={<AllDoctors />} />
           <Route path="/doctors/:id" element={<DoctorDetail />} />
@@ -29,10 +33,16 @@ const App = () => {
         <Route path="/auth" element={<AuthDashboard />}>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="change-password" element={<ResetPassword/>}/>
+          <Route path="change-password" element={<ResetPassword />} />
         </Route>
-        <Route path="/doctor-applications/" element={<DoctorRegister/>}/>
-        <Route path="/auth/me/" element={<PatienProfile/>}/>
+        <Route path="/doctor-applications/" element={<DoctorRegister />} />
+        <Route path="/auth/me/"  element={< PatientDashboard/>}>
+        <Route index element={<Navigate to='accueil' replace/>}/>
+          <Route path="accueil" element={<Acceuil/>} />
+          <Route path="appointments" element={<RendezVous/>}/>
+          <Route path="doctors" element={<PatientSearchDoctors/>}/>
+          <Route path="profil" element={<Profil/>}/>
+        </Route>
       </Routes>
       <Toaster richColors position="top-center" />
     </>

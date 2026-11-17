@@ -94,7 +94,7 @@ const Footer = () => {
         ))}
       </div>
 
-      <div className="flex  items-center font-normal text-sm">
+      <div className="flex  items-center justify-center font-normal text-sm">
         <p>
           &copy;
           {"   "}

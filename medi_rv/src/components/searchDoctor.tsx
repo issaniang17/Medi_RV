@@ -1,13 +1,13 @@
 import { MapPin, Search, Stethoscope } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
-import type { Doctor } from "../types/doctor";
+import type { DoctorRegister } from "../types/doctor";
 import axios from "axios";
 
 const SearchDoctor = () => {
   const [erreur, setErreur] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState<Doctor | null>(null);
+  const [result, setResult] = useState<DoctorRegister | null>(null);
   const [doctorSpeciality, setDoctorSpeciality] = useState("");
   const [ville, setVille] = useState("");
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {

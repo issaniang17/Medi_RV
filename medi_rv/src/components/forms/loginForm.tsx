@@ -46,7 +46,7 @@ const LoginForm = () => {
   };
   return (
     <form
-      className="flex flex-col justify-between gap-4 font-semibold mt-3 mb-5"
+      className="flex flex-col justify-between gap-4 font-semibold mt-3 mb-5 "
       onSubmit={handleSubmit}
     >
       <label htmlFor="email">Adresse email</label>
@@ -82,7 +82,7 @@ const LoginForm = () => {
           />
         )}
       </div>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between flex-col md:flex-row gap-2 items-center">
         <div className="flex gap-2 items-center text-gray-500">
           <input
             type="checkbox"

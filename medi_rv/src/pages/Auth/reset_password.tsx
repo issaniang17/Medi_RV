@@ -8,7 +8,7 @@ const ResetPassword = () => {
     e.preventDefault();
   };
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col w-[80%]  gap-5 shadow-sm/40 px-3 py-5 rounded-2xl">
       <Link
         to={"/auth/login"}
         className="flex items-center gap-1 duration-300 text-gray-500 hover:text-black "
