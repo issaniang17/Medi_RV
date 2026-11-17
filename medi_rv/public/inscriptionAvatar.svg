@@ -1,0 +1,135 @@
+<svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            viewBox="0 0 640 640"
+            fill="none"
+            role="img"
+            aria-labelledby="title desc"
+          >
+            
+            <desc id="desc">
+              Illustration vectorielle MediRDV, style moderne bleu et blanc,
+              fond transparent.
+            </desc>
+
+            <circle cx="320" cy="300" r="218" fill="#EAF3FF" />
+            <circle cx="470" cy="140" r="34" fill="#D5E8FF" />
+
+            <path
+              d="M128 515c10-90 63-139 164-139s154 49 164 139v13H128v-13Z"
+              fill="#2878D0"
+            />
+            <path
+              d="M220 386c-43 20-68 66-75 142h350c-7-76-32-122-75-142l-45 49h-110l-45-49Z"
+              fill="#FFFFFF"
+            />
+            <path d="M275 387l45 48 45-48 22 141H253l22-141Z" fill="#2878D0" />
+
+            <path
+              d="M282 330h76v69c0 23-17 40-38 40s-38-17-38-40v-69Z"
+              fill="#945039"
+            />
+            <ellipse cx="320" cy="257" rx="94" ry="114" fill="#A95F43" />
+
+            <path
+              d="M226 258c-16-73 23-135 94-143 68-8 117 42 112 110-21-8-40-25-51-47-29 26-75 42-137 39-3 18-8 31-18 41Z"
+              fill="#17243B"
+            />
+
+            <path
+              d="M260 269c14-12 34-12 48 0m24 0c14-12 34-12 48 0"
+              stroke="#17243B"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+            <circle
+              cx="286"
+              cy="289"
+              r="18"
+              stroke="#17345F"
+              stroke-width="6"
+            />
+            <circle
+              cx="354"
+              cy="289"
+              r="18"
+              stroke="#17345F"
+              stroke-width="6"
+            />
+            <path d="M304 289h32" stroke="#17345F" stroke-width="5" />
+            <circle cx="286" cy="290" r="4" fill="#17243B" />
+            <circle cx="354" cy="290" r="4" fill="#17243B" />
+            <path
+              d="M320 300l-7 27 14 3"
+              stroke="#874632"
+              stroke-width="6"
+              stroke-linecap="round"
+            />
+            <path
+              d="M293 345c16 15 38 15 54 0"
+              stroke="#6E2F2B"
+              stroke-width="8"
+              stroke-linecap="round"
+            />
+
+            <rect
+              x="405"
+              y="205"
+              width="150"
+              height="232"
+              rx="22"
+              fill="#FFFFFF"
+            />
+            <rect
+              x="449"
+              y="190"
+              width="62"
+              height="29"
+              rx="9"
+              fill="#17345F"
+            />
+            <circle cx="480" cy="270" r="31" fill="#D5E8FF" />
+            <circle cx="480" cy="260" r="12" fill="#2878D0" />
+            <path d="M458 293c4-17 13-25 22-25s18 8 22 25" fill="#2878D0" />
+            <path
+              d="m435 334 9 9 17-19m-26 55 9 9 17-19m-26 55 9 9 17-19"
+              stroke="#2878D0"
+              stroke-width="7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M476 337h56M476 392h56M476 447h56"
+              stroke="#D5E8FF"
+              stroke-width="9"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M136 174 183 190v43c0 34-20 59-47 74-27-15-47-40-47-74v-43l47-16Z"
+              fill="#2878D0"
+            />
+            <path
+              d="m116 232 14 14 28-31"
+              stroke="#FFFFFF"
+              stroke-width="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+            <path
+              d="M232 405v37c0 30 24 52 56 52"
+              stroke="#17345F"
+              stroke-width="9"
+              stroke-linecap="round"
+            />
+            <circle
+              cx="290"
+              cy="494"
+              r="14"
+              fill="#2878D0"
+              stroke="#17345F"
+              stroke-width="6"
+            />
+          </svg>

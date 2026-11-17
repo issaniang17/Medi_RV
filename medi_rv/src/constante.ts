@@ -1,11 +1,13 @@
 import {
   Baby,
   Calendar,
+  CalendarDays,
   CircleCheckBig,
   Clock,
   FaceSlightlySmiling,
   Heart,
   HeartPulse,
+  House,
   Mail,
   MapPin,
   Phone,
@@ -13,9 +15,11 @@ import {
   Shield,
   ShieldPlus,
   Stethoscope,
+  User,
   Venus,
   type LucideIcon,
 } from "lucide-react";
+import doctor from './assets/doctor.jpg'
 import type { navbarItems } from "./types/navbar";
 import type { specialityItems } from "./types/speciality";
 import type { stepProps } from "./types/comment_marche";
@@ -23,6 +27,8 @@ import type { doctorProps } from "./components/doctorCard";
 import type { socialCardProps } from "./components/socialMediaCard";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { BsInstagram, BsTwitter } from "react-icons/bs";
+import type { navPatient } from "./types/patientNav";
+import type { rvDetail } from "./types/rvDetail";
 
 export const navbar: navbarItems[] = [
   {
@@ -114,7 +120,7 @@ export const step: stepProps[] = [
 
 export const previewDoctorsExample: doctorProps[] = [
   {
-    id:1,
+    id: 1,
     nom: "Mbaye",
     prenom: "Aissatou",
     adresse: "Clinique Pasteur, Dakar",
@@ -123,16 +129,16 @@ export const previewDoctorsExample: doctorProps[] = [
     prix: "20 000",
   },
   {
-    id:2,
+    id: 2,
     nom: "Diop",
     prenom: "Ibrahima",
     adresse: "CHU de Dakar, Plateau",
     specialite: "Médecine générale",
-    disponibilite: "Demain, 09h30",
+    disponibilite: "09h30",
     prix: "15 000",
   },
   {
-    id:3,
+    id: 3,
     nom: "Ndiaye",
     prenom: "Fatou",
     adresse: "Polyclinique Madeleine",
@@ -179,63 +185,147 @@ export const socialMedia: socialCardProps[] = [
   },
 ];
 
-export const footerLink={
-    plateforme:[
-        {url:'/', nom:'Acceuil'},
-        {url:'/doctors', nom:'Trouver un médecin'},
-        {url:'/appointments', nom:'Prendre rendez-vous'},
-        {url:'/auth/me', nom:'Mon compte'},
-    ],
-    specialites:[
-        {url:'', nom:'Médecine générale'},
-        {url:'', nom:'Cardiologie'},
-        {url:'', nom:'Pédiatrie'},
-        {url:'', nom:'Gynécologie'},
-        {url:'', nom:'Dermatologie'},
-        {url:'', nom:'Dentiste'},
-    ],
-    professionnels:[
-        {url:'/doctor-applications/', nom:'Rejoindre MediRDV'},
-        {url:'/doctor/dashboard', nom:'Espace médecin'},
-        {url:'', nom:'Facturation'},
-        
-    ],
-    aide:[
-        {url:'#comment-marche', nom:'Comment ça marche'},
-        {url:'/faq', nom:'FAQ'},
-        {url:'/politique-confidentialite', nom:"Politique de confidentialité"},
-        {url:'/condution-utilisation', nom:"Conditions d'utilisation"},
-        
-    ]
-    
-}
+export const footerLink = {
+  plateforme: [
+    { url: "/", nom: "Acceuil" },
+    { url: "/doctors", nom: "Trouver un médecin" },
+    { url: "/appointments", nom: "Prendre rendez-vous" },
+    { url: "/auth/me", nom: "Mon compte" },
+  ],
+  specialites: [
+    { url: "", nom: "Médecine générale" },
+    { url: "", nom: "Cardiologie" },
+    { url: "", nom: "Pédiatrie" },
+    { url: "", nom: "Gynécologie" },
+    { url: "", nom: "Dermatologie" },
+    { url: "", nom: "Dentiste" },
+  ],
+  professionnels: [
+    { url: "/doctor-applications/", nom: "Rejoindre MediRDV" },
+    { url: "/doctor/dashboard", nom: "Espace médecin" },
+    { url: "", nom: "Facturation" },
+  ],
+  aide: [
+    { url: "#comment-marche", nom: "Comment ça marche" },
+    { url: "/faq", nom: "FAQ" },
+    { url: "/confidentialite", nom: "Politique de confidentialité" },
+    { url: "/cgu", nom: "Conditions d'utilisation" },
+  ],
+};
 
-export const supportMediRV:{icon:LucideIcon, info:string}[]=[
-    {
-        icon:Phone,
-        info:'+221 33 800 00 00'
-    },
-    {
-        icon:Mail,
-        info:'contact@medirv.sn'
-    },
-    {
-        icon:MapPin,
-        info:'Dakar, Sénégal'
-    },
-]
+export const supportMediRV: { icon: LucideIcon; info: string }[] = [
+  {
+    icon: Phone,
+    info: "+221 33 800 00 00",
+  },
+  {
+    icon: Mail,
+    info: "contact@medirv.sn",
+  },
+  {
+    icon: MapPin,
+    info: "Dakar, Sénégal",
+  },
+];
 
-export const authNavbar:navbarItems[]=[
-    {
-        nom:'Connexion',
-        url:'/auth/login'
-    },
-    {
-        nom:'Incription',
-        url:'/auth/register'
-    },
-    {
-        nom:'Mot de passe oublié',
-        url:'/auth/change-password/'
-    },
-]
+export const authNavbar: navbarItems[] = [
+  {
+    nom: "Connexion",
+    url: "/auth/login",
+  },
+  {
+    nom: "Incription",
+    url: "/auth/register",
+  },
+  {
+    nom: "Mot de passe oublié",
+    url: "/auth/change-password/",
+  },
+];
+
+export const patientNavigation: navPatient[] = [
+  {
+    icon: House,
+    name: "Acceuil",
+    url: "/auth/me/accueil",
+  },
+  {
+    icon: Search,
+    name: "Trouver un médecin",
+    url: "/doctors",
+  },
+  {
+    icon: CalendarDays,
+    name: "Mes rendez-vous",
+    url: "/auth/me/appointments",
+  },
+  {
+    icon: User,
+    name: "Mon profil",
+    url: "/auth/me/profil",
+  },
+];
+
+export const patientRV: rvDetail[] = [
+  {
+    id: 1,
+    date: "Ven 16 octobre 2026",
+    drImage: doctor,
+    firstName: "Ibrahima",
+    lastName: "Ndiaye",
+    lieu: "CHU de Dakar, Plateau",
+    speciality: "Médecine générale",
+    heure: "09h30",
+    status:'rejected'
+  },
+  {
+    id: 2,
+    date: "Ven 16 octobre 2026",
+    drImage: doctor,
+    firstName: "Ibrahima",
+    lastName: "Ndiaye",
+    lieu: "CHU de Dakar, Plateau",
+    speciality: "Médecine générale",
+    heure: "09h30",
+    status:'accepted'
+  },
+  {
+    id: 3,
+    date: "Ven 16 octobre 2026",
+    drImage: doctor,
+    firstName: "Ibrahima",
+    lastName: "Ndiaye",
+    lieu: "CHU de Dakar, Plateau",
+    speciality: "Médecine générale",
+    heure: "09h30",
+    status:'pending'
+  },
+  {
+    id: 4,
+    date: "Ven 16 octobre 2026",
+    drImage: doctor,
+    firstName: "Ibrahima",
+    lastName: "Ndiaye",
+    lieu: "CHU de Dakar, Plateau",
+    speciality: "Médecine générale",
+    heure: "09h30",
+    status:'cancelled'
+  },
+  {
+    id: 5,
+    date: "Ven 16 octobre 2026",
+    drImage: doctor,
+    firstName: "Aissatou",
+    lastName: "Diop",
+    lieu: "CHU de Dakar, Plateau",
+    speciality: "Médecine générale",
+    heure: "09h30",
+    status:'accepted'
+  },
+];
+export const statusStyle:{status:string, style:string}[] =[
+  {status:'accepted',style:'bg-[#E0F2F4] text-[#0B6B78] border border-[#0B6B78]'},
+  {status:'rejected',style:'bg-[#FCF4F4] text-[#C8322A] border-[#C8322A] border'},
+  {status:'cancelled',style:'bg-[#ECFDF5] text-[#007A55] border-[#007A55] border'},
+  {status:'pending',style:'bg-[#FFFBEB] text-[#BB4D00] border-[#BB4D00] border'}
+] 

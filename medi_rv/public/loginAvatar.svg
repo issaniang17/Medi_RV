@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">MediRDV — Avatar de connexion patient</title>
+<desc id="desc">Illustration vectorielle MediRDV, style moderne bleu et blanc, fond transparent.</desc>
+
+<!-- Decorative backdrop -->
+<circle cx="320" cy="300" r="218" fill="#EAF3FF"/>
+<circle cx="470" cy="150" r="42" fill="#D5E8FF"/>
+<path d="M93 480c22-53 67-84 124-84h206c57 0 102 31 124 84v48H93v-48Z" fill="#D6E8FF"/>
+<!-- Patient body -->
+<path d="M174 510c8-89 54-139 146-139s138 50 146 139v18H174v-18Z" fill="#2878D0"/>
+<path d="M256 389h128l-17 139H273l-17-139Z" fill="#FFFFFF"/>
+<path d="M287 389h66l-12 42-21 22-21-22-12-42Z" fill="#DCEBFF"/>
+<!-- Neck and face -->
+<path d="M278 333h84v72c0 25-18 43-42 43s-42-18-42-43v-72Z" fill="#945039"/>
+<ellipse cx="320" cy="267" rx="99" ry="119" fill="#A95F43"/>
+<!-- Hair -->
+<path d="M222 267c-16-76 24-142 99-148 64-5 116 39 118 105-19-10-34-28-41-49-22 24-69 42-132 39-4 21-18 40-44 53Z" fill="#17243B"/>
+<path d="M226 253c-14 20-14 52-2 74 10-13 17-30 18-48l-16-26Zm188-1c14 19 14 52 2 74-10-13-17-30-18-48l16-26Z" fill="#17243B"/>
+<!-- Face details -->
+<path d="M275 276c10-8 23-8 33 0M340 276c10-8 23-8 33 0" stroke="#17243B" stroke-width="8" stroke-linecap="round"/>
+<ellipse cx="292" cy="298" rx="6" ry="9" fill="#17243B"/><ellipse cx="356" cy="298" rx="6" ry="9" fill="#17243B"/>
+<path d="M319 301l-8 31 15 3" stroke="#874632" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M292 351c17 17 40 17 57 0" stroke="#6E2F2B" stroke-width="8" stroke-linecap="round"/>
+<!-- Laptop -->
+<path d="M180 435h280l-18 105H198l-18-105Z" fill="#17345F"/>
+<rect x="194" y="447" width="252" height="78" rx="9" fill="#FFFFFF"/>
+<path d="M163 540h314l-23 19H186l-23-19Z" fill="#2878D0"/>
+<!-- Login card and lock -->
+<rect x="421" y="88" width="126" height="156" rx="22" fill="#FFFFFF"/>
+<rect x="457" y="151" width="54" height="48" rx="10" fill="#2878D0"/>
+<path d="M468 151v-13a16 16 0 0 1 32 0v13" stroke="#2878D0" stroke-width="9" stroke-linecap="round"/>
+<circle cx="484" cy="173" r="5" fill="#FFFFFF"/>
+<path d="M484 178v9" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+<rect x="440" y="210" width="88" height="10" rx="5" fill="#D5E8FF"/>
+<circle cx="133" cy="190" r="35" fill="#2878D0"/>
+<path d="M133 171v38M114 190h38" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+
+</svg>

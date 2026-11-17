@@ -11,17 +11,17 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
-type registerProps = {
+export type registerProps = {
   email: string;
   password: string;
   lastName: string;
   firstName: string;
   confirmPassword: string;
   phone: string;
-  acceptConditon: boolean;
+  gender: string;
 };
 const RegisterForm = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
   const [viewPassword, setViewPassword] = useState(false);
   const [register, setRegister] = useState<registerProps>({
     email: "",
@@ -30,16 +30,18 @@ const RegisterForm = () => {
     firstName: "",
     lastName: "",
     phone: "",
-    acceptConditon: false,
+    gender: "",
   });
   const handleViewPassword = () => {
     setViewPassword(!viewPassword);
   };
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target;
     setRegister((prev) => ({
       ...prev,
-      [name]: value === "false" || value === "true" ? Boolean(value) : value,
+      [name]: value,
     }));
   };
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
@@ -47,6 +49,7 @@ const RegisterForm = () => {
     if (
       !register.email ||
       !register.firstName ||
+      !register.gender ||
       !register.lastName ||
       !register.phone ||
       !register.password ||
@@ -62,16 +65,24 @@ const RegisterForm = () => {
       return toast.error("Les deux mots de passe ne correspond pas");
     }
     console.log(register);
-    localStorage.setItem('Register', JSON.stringify(register))
-    navigate('/auth/login')
+    localStorage.setItem("Register", JSON.stringify(register));
+    navigate("/auth/login");
   };
   return (
     <form
-      className="flex flex-col justify-between gap-4 font-semibold mt-3 mb-5"
+      className="flex flex-col justify-between gap-4 font-semibold mt-3 mb-5 "
       onSubmit={handleSubmit}
     >
       <div className="flex flex-col gap-4 md:justify-between md:flex-row">
-        <div className="w-full md:w-1/2">
+        <div className="flex flex-col space-y-2">
+          <label htmlFor="gender">Civilité</label>
+          <select name="gender" id="gender" onChange={handleChange} className="rounded-lg border bg-gray-200 border-gray-400 p-2">
+            <option value="">-</option>
+            <option value="male">Mr</option>
+            <option value="female">Mme</option>
+          </select>
+        </div>
+        <div className="md:w-1/2 flex flex-col space-y-2">
           <label htmlFor="firstName">Prénom</label>
           <div className="flex justify-between p-2 gap-3 rounded-lg border bg-gray-200 border-gray-400 ">
             <User className="text-gray-600/80" />
@@ -86,10 +97,10 @@ const RegisterForm = () => {
             />
           </div>
         </div>
-        <div className="w-full md:w-1/2">
+        <div className="md:w-1/3 flex flex-col space-y-2">
           <label htmlFor="lastName">Nom</label>
 
-          <div className="flex justify-between p-2 gap-3 rounded-lg border bg-gray-200 border-gray-400">
+          <div className="flex justify-between p-2 gap-3 rounded-lg border bg-gray-200 border-gray-400">  
             <User className="text-gray-600/80" />
             <input
               className="flex-1 outline-0"
@@ -118,7 +129,7 @@ const RegisterForm = () => {
       </div>
       <label htmlFor="phone">Téléphone</label>
       <div className="flex justify-between p-2 gap-3 rounded-lg border bg-gray-200 border-gray-400">
-        <Phone className="text-gray-600/80"/>
+        <Phone className="text-gray-600/80" />
         <input
           className="flex-1 outline-0"
           type="tel"
@@ -126,7 +137,7 @@ const RegisterForm = () => {
           id="phone"
           placeholder="771234567"
           pattern="7[07568][0-9]{3}[0-9]{2}[0-9]{2}"
-          value={register.phone.trim().split(' ').join('')}
+          value={register.phone.trim().split(" ").join("")}
           onChange={handleChange}
           required
         />
@@ -181,8 +192,6 @@ const RegisterForm = () => {
             type="checkbox"
             name="acceptConditon"
             id="acceptConditon"
-            value={String(register.acceptConditon)}
-            onChange={handleChange}
             required
           />
           <label htmlFor="acceptConditon">
