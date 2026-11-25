@@ -10,7 +10,7 @@ const Login = () => {
 
       <div className="flex flex-col gap-5 shadow-sm/40 px-3 py-5 rounded-2xl">
         <div className="space-y-3">
-          <p className="font-black text-3xl">Bon retour 👋</p>
+          <p className="font-black text-3xl">Bon retour &#x1F44B;</p>
           <p className="text-gray-500 text-lg">
             Connectez-vous à votre espace MediRV pour gérer vos rendez-vous.
           </p>

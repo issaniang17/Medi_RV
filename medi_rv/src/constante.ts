@@ -19,7 +19,7 @@ import {
   Venus,
   type LucideIcon,
 } from "lucide-react";
-import doctor from './assets/doctor.jpg'
+import doctor from "./assets/doctor.jpg";
 import type { navbarItems } from "./types/navbar";
 import type { specialityItems } from "./types/speciality";
 import type { stepProps } from "./types/comment_marche";
@@ -29,6 +29,7 @@ import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { BsInstagram, BsTwitter } from "react-icons/bs";
 import type { navPatient } from "./types/patientNav";
 import type { rvDetail } from "./types/rvDetail";
+import type { doctorCreneau } from "./types/crenauxDoctor";
 
 export const navbar: navbarItems[] = [
   {
@@ -276,7 +277,7 @@ export const patientRV: rvDetail[] = [
     lieu: "CHU de Dakar, Plateau",
     speciality: "Médecine générale",
     heure: "09h30",
-    status:'rejected'
+    status: "rejected",
   },
   {
     id: 2,
@@ -287,7 +288,7 @@ export const patientRV: rvDetail[] = [
     lieu: "CHU de Dakar, Plateau",
     speciality: "Médecine générale",
     heure: "09h30",
-    status:'accepted'
+    status: "accepted",
   },
   {
     id: 3,
@@ -298,7 +299,7 @@ export const patientRV: rvDetail[] = [
     lieu: "CHU de Dakar, Plateau",
     speciality: "Médecine générale",
     heure: "09h30",
-    status:'pending'
+    status: "pending",
   },
   {
     id: 4,
@@ -309,7 +310,7 @@ export const patientRV: rvDetail[] = [
     lieu: "CHU de Dakar, Plateau",
     speciality: "Médecine générale",
     heure: "09h30",
-    status:'cancelled'
+    status: "cancelled",
   },
   {
     id: 5,
@@ -320,12 +321,73 @@ export const patientRV: rvDetail[] = [
     lieu: "CHU de Dakar, Plateau",
     speciality: "Médecine générale",
     heure: "09h30",
-    status:'accepted'
+    status: "accepted",
   },
 ];
-export const statusStyle:{status:string, style:string}[] =[
-  {status:'accepted',style:'bg-[#E0F2F4] text-[#0B6B78] border border-[#0B6B78]'},
-  {status:'rejected',style:'bg-[#FCF4F4] text-[#C8322A] border-[#C8322A] border'},
-  {status:'cancelled',style:'bg-[#ECFDF5] text-[#007A55] border-[#007A55] border'},
-  {status:'pending',style:'bg-[#FFFBEB] text-[#BB4D00] border-[#BB4D00] border'}
-] 
+export const statusStyle: { status: string; style: string }[] = [
+  {
+    status: "accepted",
+    style: "bg-[#E0F2F4] text-[#0B6B78] border border-[#0B6B78]",
+  },
+  {
+    status: "rejected",
+    style: "bg-[#FCF4F4] text-[#C8322A] border-[#C8322A] border",
+  },
+  {
+    status: "cancelled",
+    style: "bg-[#ECFDF5] text-[#007A55] border-[#007A55] border",
+  },
+  {
+    status: "pending",
+    style: "bg-[#FFFBEB] text-[#BB4D00] border-[#BB4D00] border",
+  },
+];
+
+export const doctorNav: navPatient[] = [
+  {
+    icon: House,
+    name: "Tableau de bord",
+    url: "/doctor/dashboard/view",
+  },
+  {
+    icon: Clock,
+    name: "Disponibilité",
+    url: "/doctor/dashboard/availabilities/",
+  },
+  {
+    icon: Calendar,
+    name: "Rendez-vous",
+    url: "/doctor/dashboard/appointments/",
+  },
+ 
+];
+
+export const filtreDoctorNav: { url: string; name: string }[] = [
+  { name: "Tous", url: "/doctor/dashboard/appointments/all" },
+  { name: "En attente", url: "pending" },
+  { name: "Acceptés", url: "accepted" },
+  { name: "Annulé", url: "rejected" },
+  { name: "Terminés", url: "cancelled" },
+];
+
+export const doctorCreneaux: doctorCreneau[] = [
+  { id: 1, day: "Lundi", availability: [{id:1, start: "08:00", end: "09:00" }] },
+  { id: 2, day: "Mardi", availability: [{id:1, start: "08:00", end: "09:00" }] },
+  { id: 3, day: "Mercredi", availability: [{id:1, start: "08:00", end: "09:00" }] },
+  {
+    id: 4,
+    day: "Jeudi",
+    availability: [
+      {id:1, start: "08:00", end: "09:00" },
+      {id:2, start: "10:00", end: "12:00" },
+    ],
+  },
+  { id: 5, day: "Vendredi", availability: [{id:1, start: "08:00", end: "11:00" }] },
+  { id: 6, day: "Samedi", availability: [{id:1, start: "08:00", end: "12:00" }] },
+  { id: 7, day: "Dimanche"},
+];
+
+export const heureDisponible:string[]=[
+  '08:00','08:30','09:00','09:30','10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30'
+]
+export const dayofWeek = ["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"]
