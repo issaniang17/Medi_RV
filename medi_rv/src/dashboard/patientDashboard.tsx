@@ -12,10 +12,10 @@ const PatientDashboard = () => {
   const [viewSidebar, setViewSidebar] = useState(false);
   const handleSidebarView = () => {
     setViewSidebar(!viewSidebar);
-    if(!viewSidebar){
-      document.body.style.overflow = 'hidden'
-    }else{
-      document.body.style.overflow = 'auto'
+    if (!viewSidebar) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
     }
   };
   return (
@@ -95,7 +95,10 @@ const PatientDashboard = () => {
             </Link>
           </div>
         </div>
-        <div className="backdrop-blur-xs flex-1" onClick={handleSidebarView}></div>
+        <div
+          className="backdrop-blur-xs flex-1"
+          onClick={handleSidebarView}
+        ></div>
       </div>
     </div>
   );

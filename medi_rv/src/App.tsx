@@ -14,7 +14,11 @@ import PatientDashboard from "./dashboard/patientDashboard";
 import Acceuil from "./pages/patient/acceuil";
 import RendezVous from "./pages/patient/rendez_vous";
 import Profil from "./pages/patient/profil";
-import PatientSearchDoctors from "./pages/patient/search_doctors";
+import DoctorDashboard from "./pages/doctor/doctorDashboard";
+import ViewAll from "./pages/doctor/viewAll";
+import Disponibility from "./pages/doctor/disponibility";
+import RvAction from "./pages/doctor/rvAction";
+import FiltreRv from "./pages/doctor/filtreRv";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -36,12 +40,20 @@ const App = () => {
           <Route path="change-password" element={<ResetPassword />} />
         </Route>
         <Route path="/doctor-applications/" element={<DoctorRegister />} />
-        <Route path="/auth/me/"  element={< PatientDashboard/>}>
-        <Route index element={<Navigate to='accueil' replace/>}/>
-          <Route path="accueil" element={<Acceuil/>} />
-          <Route path="appointments" element={<RendezVous/>}/>
-          <Route path="doctors" element={<PatientSearchDoctors/>}/>
-          <Route path="profil" element={<Profil/>}/>
+        <Route path="/auth/me/" element={<PatientDashboard />}>
+          <Route index element={<Navigate to="accueil" replace />} />
+          <Route path="accueil" element={<Acceuil />} />
+          <Route path="appointments" element={<RendezVous />} />
+          <Route path="profil" element={<Profil />} />
+        </Route>
+        <Route path="/doctor/dashboard/" element={<DoctorDashboard/>}>
+        <Route index element={< Navigate to={'view'} replace/>}/>
+        <Route path="view" element={<ViewAll/>}/>
+        <Route path="availabilities" element={<Disponibility/>}/>
+        <Route path="appointments" element={<RvAction/>}>
+        <Route index element={<Navigate to='all' replace/>}/>
+          <Route path=":slug" element={<FiltreRv/>}/>
+        </Route>
         </Route>
       </Routes>
       <Toaster richColors position="top-center" />

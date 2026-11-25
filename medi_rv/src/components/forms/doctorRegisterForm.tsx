@@ -1,10 +1,11 @@
 import { useState } from "react";
 import type { DoctorRegister } from "../../types/doctor";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Stethoscope } from "lucide-react";
 import { toast } from "sonner";
 
 const DoctorRegisterForm = () => {
+  const navigate = useNavigate()
   const [doctorForm, setDoctorForm] = useState<DoctorRegister>({
     address: "",
     city: "",
@@ -43,7 +44,9 @@ const DoctorRegisterForm = () => {
     if(!doctorForm.password || doctorForm.password.length < 8){
       return toast.error('Le mot de passe doit comporter 8 caractéres au moins')
     }
-    console.log(doctorForm);
+    console.log(doctorForm)
+    localStorage.setItem('Doctor', JSON.stringify(doctorForm));
+    navigate('/doctor/dashboard')
   };
   return (
     <form
