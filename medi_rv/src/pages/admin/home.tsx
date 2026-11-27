@@ -1,16 +1,16 @@
 import { Calendar, ShieldCheck, Stethoscope, Users2 } from "lucide-react";
 import CardRv from "../../components/patients/cardRvStats";
 import WelcomeCard from "../../components/patients/welcomeCard";
-import { useState } from "react";
 import { patientRV } from "../../constante";
 import ActionRapide from "./actionRapide";
 
 const AdminHome = () => {
-  const [all, setAll] = useState(patientRV);
+  const all = patientRV;
   const admin = localStorage.getItem("Register");
   if (!admin) {
     return null;
   }
+  console.log()
   const adminInfo = JSON.parse(admin);
   return (
     <div className="flex flex-col gap-5">
