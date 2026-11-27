@@ -8,14 +8,19 @@ import {
   Heart,
   HeartPulse,
   House,
+  LayoutGrid,
   Mail,
   MapPin,
   Phone,
   Search,
   Shield,
+  ShieldCheck,
   ShieldPlus,
   Stethoscope,
   User,
+  UserCog,
+  UserGroup,
+  UserRoundPlus,
   Venus,
   type LucideIcon,
 } from "lucide-react";
@@ -30,6 +35,7 @@ import { BsInstagram, BsTwitter } from "react-icons/bs";
 import type { navPatient } from "./types/patientNav";
 import type { rvDetail } from "./types/rvDetail";
 import type { doctorCreneau } from "./types/crenauxDoctor";
+import type { cardAdminProps } from "./types/cardAdmin"; 
 
 export const navbar: navbarItems[] = [
   {
@@ -359,7 +365,6 @@ export const doctorNav: navPatient[] = [
     name: "Rendez-vous",
     url: "/doctor/dashboard/appointments/",
   },
- 
 ];
 
 export const filtreDoctorNav: { url: string; name: string }[] = [
@@ -371,23 +376,183 @@ export const filtreDoctorNav: { url: string; name: string }[] = [
 ];
 
 export const doctorCreneaux: doctorCreneau[] = [
-  { id: 1, day: "Lundi", availability: [{id:1, start: "08:00", end: "09:00" }] },
-  { id: 2, day: "Mardi", availability: [{id:1, start: "08:00", end: "09:00" }] },
-  { id: 3, day: "Mercredi", availability: [{id:1, start: "08:00", end: "09:00" }] },
+  {
+    id: 1,
+    day: "Lundi",
+    availability: [{ id: 1, start: "08:00", end: "09:00" }],
+  },
+  {
+    id: 2,
+    day: "Mardi",
+    availability: [{ id: 1, start: "08:00", end: "09:00" }],
+  },
+  {
+    id: 3,
+    day: "Mercredi",
+    availability: [{ id: 1, start: "08:00", end: "09:00" }],
+  },
   {
     id: 4,
     day: "Jeudi",
     availability: [
-      {id:1, start: "08:00", end: "09:00" },
-      {id:2, start: "10:00", end: "12:00" },
+      { id: 1, start: "08:00", end: "09:00" },
+      { id: 2, start: "10:00", end: "12:00" },
     ],
   },
-  { id: 5, day: "Vendredi", availability: [{id:1, start: "08:00", end: "11:00" }] },
-  { id: 6, day: "Samedi", availability: [{id:1, start: "08:00", end: "12:00" }] },
-  { id: 7, day: "Dimanche"},
+  {
+    id: 5,
+    day: "Vendredi",
+    availability: [{ id: 1, start: "08:00", end: "11:00" }],
+  },
+  {
+    id: 6,
+    day: "Samedi",
+    availability: [{ id: 1, start: "08:00", end: "12:00" }],
+  },
+  { id: 7, day: "Dimanche" },
 ];
 
-export const heureDisponible:string[]=[
-  '08:00','08:30','09:00','09:30','10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30'
-]
-export const dayofWeek = ["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"]
+export const heureDisponible: string[] = [
+  "08:00",
+  "08:30",
+  "09:00",
+  "09:30",
+  "10:00",
+  "10:30",
+  "11:00",
+  "11:30",
+  "12:00",
+  "12:30",
+  "13:00",
+  "13:30",
+  "14:00",
+  "14:30",
+  "15:00",
+  "15:30",
+  "16:00",
+  "16:30",
+  "17:00",
+  "17:30",
+];
+export const dayofWeek = [
+  "Lundi",
+  "Mardi",
+  "Mercredi",
+  "Jeudi",
+  "Vendredi",
+  "Samedi",
+  "Dimanche",
+];
+
+export const adminNav: navPatient[] = [
+  {
+    icon: LayoutGrid,
+    name: "Tableau de bord",
+    url: "/admin/dashboard",
+  },
+  {
+    icon: UserGroup,
+    name: "Utilisateurs",
+    url: "/admin/users",
+  },
+  {
+    icon: Stethoscope,
+    name: "Médecins",
+    url: "/admin/doctors",
+  },
+  {
+    icon: UserCog,
+    name: "Paramétre",
+    url: "/admin/setting",
+  },
+];
+export const adminRapidAction: {
+  url: string;
+  name: string;
+  icon: LucideIcon;
+  subtitle: string;
+}[] = [
+  {
+    icon: UserRoundPlus,
+    name: "Ajouter un utilisateur",
+    subtitle: "Créer un nouveau compte",
+    url: "/admin/setting",
+  },
+  {
+    icon: UserCog,
+    name: "Valider un médecin",
+    subtitle: "Traiter les demandes en attente",
+    url: "/admin/doctors",
+  },
+  {
+    icon: ShieldCheck,
+    name: "Gerer les utilisateurs",
+    subtitle: "Roles et statuts",
+    url: "/admin/users",
+  },
+];
+
+export const users: cardAdminProps[] = [
+  {
+    email: "issa@gmail.com",
+    firstName: "Issa",
+    id: 1,
+    lastName: "Niang",
+    role: "patient",
+    statut: "approved",
+  },
+   {
+    email: "issa@gmail.com",
+    firstName: "Issa",
+    id: 2,
+    lastName: "Niang",
+    role: "patient",
+    statut: "pending",
+  },
+   {
+    email: "issa@gmail.com",
+    firstName: "Issa",
+    id: 3,
+    lastName: "Niang",
+    role: "patient",
+    statut: "approved",
+  },
+   {
+    email: "issa@gmail.com",
+    firstName: "Issa",
+    id: 4,
+    lastName: "Niang",
+    role: "medecin",
+    statut: "approved",
+    speciality:'dentiste',
+    location:'Dakar,plateau'
+  },
+   {
+    email: "issa@gmail.com",
+    firstName: "Issa",
+    id: 5,
+    lastName: "Niang",
+    role: "medecin",
+    statut: "pending",
+    speciality:'pediatre',
+    location:'Dakar,plateau'
+  },
+   {
+    email: "issa@gmail.com",
+    firstName: "Issa",
+    id: 6,
+    lastName: "Niang",
+    role: "medecin",
+    statut: "rejected",
+    speciality:'ophtalmologue',
+    location:'Dakar,plateau'
+  },
+  {
+    email: "moussa@gmail.com",
+    firstName: "moussa",
+    id: 7,
+    lastName: "Gueye",
+    role: "admin",
+    statut: "approved",
+  },
+];

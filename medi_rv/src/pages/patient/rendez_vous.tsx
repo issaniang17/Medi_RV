@@ -76,7 +76,7 @@ const RendezVous = () => {
             icon={<Search />}
             name="Trouver un médecin"
             url="/doctors"
-            style="bg-[#0B6B78] w-full"
+            style="bg-[#0B6B78] w-full text-white"
           />
         </div>
       </div>

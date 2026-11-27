@@ -10,9 +10,12 @@ type cardProps = {
   statPending?:number;
   statAccepted?:number;
   pendingWord?: string;
-  acceptedgWord?: string
+  acceptedgWord?: string;
+  adminIntro?:boolean,
+  pendingDoctor?:string,
+  linkStyleAdmin?:string
 };
-const WelcomeCard = ({ name, bgColor, urlIcon, urlName, url,statAccepted, statPending, acceptedgWord,pendingWord  }: cardProps) => {
+const WelcomeCard = ({ name, bgColor, urlIcon, urlName, url,statAccepted, statPending, acceptedgWord,pendingWord, adminIntro ,pendingDoctor,linkStyleAdmin }: cardProps) => {
   const hours = new Date().getHours();
   const Icon = urlIcon;
   return (
@@ -40,7 +43,10 @@ const WelcomeCard = ({ name, bgColor, urlIcon, urlName, url,statAccepted, statPe
            et{" "}
             <span className="text-white font-bold">{statPending} {pendingWord}</span> à venir.
           </p>}
-          
+          {adminIntro && <div>
+            <p className="opacity-80">Voici l'activité de votre plateforme aujourd'hui.</p>
+            {pendingDoctor && <p>{pendingDoctor}</p> }
+          </div> }
         </div>
       </div>
       <div>
@@ -48,7 +54,7 @@ const WelcomeCard = ({ name, bgColor, urlIcon, urlName, url,statAccepted, statPe
           icon={<Icon />}
           name={urlName}
           url={url}
-          style="bg-[#E07B39] w-full"
+          style={`${linkStyleAdmin ? linkStyleAdmin : 'bg-[#E07B39] w-full text-white '}`}
         />
       </div>
     </div>

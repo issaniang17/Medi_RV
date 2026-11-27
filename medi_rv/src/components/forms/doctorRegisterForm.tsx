@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Stethoscope } from "lucide-react";
 import { toast } from "sonner";
 
-const DoctorRegisterForm = () => {
+const DoctorRegisterForm = ({style}:{style?:string}) => {
   const navigate = useNavigate()
   const [doctorForm, setDoctorForm] = useState<DoctorRegister>({
     address: "",
@@ -17,6 +17,7 @@ const DoctorRegisterForm = () => {
     order_number: "",
     password: "",
     speciality: "",
+    etablissement_name:''
   });
   const handleChange = (
     e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>,
@@ -32,6 +33,7 @@ const DoctorRegisterForm = () => {
     if (
       !doctorForm.address ||
       !doctorForm.lastName ||
+      !doctorForm.etablissement_name||
       !doctorForm.firstName ||
       !doctorForm.email ||
       !doctorForm.city ||
@@ -50,7 +52,7 @@ const DoctorRegisterForm = () => {
   };
   return (
     <form
-      className="flex flex-col justify-center gap-5 px-3 py-5 rounded-2xl shadow-sm/40"
+      className={`${style} flex flex-col justify-center gap-5 px-3 py-5 rounded-2xl shadow-sm/40`}
       onSubmit={handleSubmit}
     >
       <label htmlFor="name">
@@ -183,6 +185,19 @@ const DoctorRegisterForm = () => {
           />
         </div>
       </div>
+      <div className="flex flex-col gap-2 w-full md:w-1/2">
+          <label htmlFor="etablissement_name">
+            Etalissement <span className="text-red-500">*</span>
+          </label>
+          <input
+            className="rounded-full  outline-[#0b6b78b6] outline-1 p-2"
+            type="text"
+            value={doctorForm.etablissement_name.trim().toLowerCase()}
+            name="etablissement_name"
+            onChange={handleChange}
+            placeholder="Donnez le nom de votre etablisement"
+          />
+        </div>
       <div className="space-x-3 text-gray-500">
         <input type="checkbox" name="condition" id="condition" required />
         <label htmlFor="condition">
