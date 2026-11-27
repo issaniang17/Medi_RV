@@ -9,4 +9,5 @@ export type DoctorRegister = {
     phone:string;
     address:string;
     order_number:string;
+    etablissement_name:string
 }

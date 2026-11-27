@@ -19,6 +19,11 @@ import ViewAll from "./pages/doctor/viewAll";
 import Disponibility from "./pages/doctor/disponibility";
 import RvAction from "./pages/doctor/rvAction";
 import FiltreRv from "./pages/doctor/filtreRv";
+import AdminDashboard from "./pages/admin/adminDashbord";
+import AdminHome from "./pages/admin/home";
+import AllUsers from "./pages/admin/allUsers";
+import AllAdminDoctors from "./pages/admin/allDoctors";
+import Setting from "./pages/admin/setting";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -46,14 +51,21 @@ const App = () => {
           <Route path="appointments" element={<RendezVous />} />
           <Route path="profil" element={<Profil />} />
         </Route>
-        <Route path="/doctor/dashboard/" element={<DoctorDashboard/>}>
-        <Route index element={< Navigate to={'view'} replace/>}/>
-        <Route path="view" element={<ViewAll/>}/>
-        <Route path="availabilities" element={<Disponibility/>}/>
-        <Route path="appointments" element={<RvAction/>}>
-        <Route index element={<Navigate to='all' replace/>}/>
-          <Route path=":slug" element={<FiltreRv/>}/>
+        <Route path="/doctor/dashboard/" element={<DoctorDashboard />}>
+          <Route index element={<Navigate to={"view"} replace />} />
+          <Route path="view" element={<ViewAll />} />
+          <Route path="availabilities" element={<Disponibility />} />
+          <Route path="appointments" element={<RvAction />}>
+            <Route index element={<Navigate to="all" replace />} />
+            <Route path=":slug" element={<FiltreRv />} />
+          </Route>
         </Route>
+        <Route path="/admin" element={<AdminDashboard />}>
+          <Route index element={<Navigate to={"dashboard"} replace />} />
+          <Route path="dashboard" element={<AdminHome />} />
+          <Route path="users" element={<AllUsers />} />
+          <Route path="doctors" element={<AllAdminDoctors />} />
+          <Route path="setting" element={<Setting />} />
         </Route>
       </Routes>
       <Toaster richColors position="top-center" />

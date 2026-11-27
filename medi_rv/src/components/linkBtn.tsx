@@ -11,7 +11,7 @@ type btnProps ={
 
 const LinkBtn = ({icon, name, url, style}:btnProps) => {
   return (
-    <Link to={url} className={`${style} inline-flex justify-center items-center gap-2 text-white font-semibold rounded-lg p-3 duration-200 ease-in transition-colors`}>
+    <Link to={url} className={`${style} inline-flex justify-center items-center gap-2 font-semibold rounded-lg p-3 duration-200 ease-in transition-colors`}>
         <p>{icon}</p>
         <p>{name}</p>
     </Link>
